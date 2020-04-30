@@ -1,0 +1,34 @@
+#!/usr/bin/bash
+#Author: Narendra 
+#!/usr/bin/bash
+#Author: Narendra 
+#Automating httpd actions like: start,stop,restart and status
+
+user_id=$(id -u)
+
+if [[ $user_id -ne 0 ]]
+then
+   echo "you are not the root user to run this shell script"
+fi
+
+read -p "Enter your action for httpd: " usr_action
+if [[ $usr_action == "start" ]]
+then
+    echo "Starting httpd....."
+    systemctl status httpd &> /dev/null || systemctl start httpd
+elif [[ $usr_action == "stop" ]]
+then
+    echo "stoping httpd...."
+    systemctl status httpd &> /dev/null && systemctl stop httpd
+elif [[ $usr_action == "restart" ]]
+then
+     echo "restarting httpd ......."
+     systemctl restart httpd
+elif [[ $usr_action == "status" ]]
+then
+     echo "finding the status......."
+     systemctl status httpd
+else
+    echo "your action is invalid"
+    echo "valid actions are start|stop|restart|status"
+fi

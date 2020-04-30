@@ -1,0 +1,11 @@
+Question: Schedule a cron to execute at 2am daily.
+0 2 * * * /bin/sh backup.sh
+Q.Schedule a cron to execute on every minutes.
+* * * * *  /scripts/script.sh
+Q.Schedule a cron to execute on every 10 minutes.
+*/10 * * * * /scripts/monitor.sh
+Q.Schedule a cron to execute on Jan,march,dec.
+* * * 1,3,12 *  /script/script.sh
+Q.Schedule a cron to execute on first sunday of every month.
+0 2 * * sun  [[ $(date '+%d') -le 07 ]] && /script/script.sh
+Concept: command1 && command2  (command2 will execute if command1 is success)

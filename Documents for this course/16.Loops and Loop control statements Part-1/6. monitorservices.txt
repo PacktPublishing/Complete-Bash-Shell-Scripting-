@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+myservices=(docker nginx)
+for eachService in ${myservices[@]}
+do
+    systemctl status $eachService 1>/dev/null 2>/dev/null
+    if [[ $? -ne 0 ]]
+    then
+      echo "The service $eachService is not running"
+      echo "The service $eachService is not running on $(hostname -s)" | /usr/bin/mail -s "Status of $eachService" "dowithscripting@gmail.com"
+    fi
+
+done

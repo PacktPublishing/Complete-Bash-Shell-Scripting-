@@ -1,0 +1,22 @@
+Arithmetic Operators:
+====================
+  Addition 		+
+  Subtraction 		-
+  Multiplication	*
+  Division		/
+  Remainder		%
+  Increment		++  (To increment your value by one; example if x=2 then ((x++)) means x value will increase by 1 and it is 3 now.
+  Decrement		--
+If your data is integers then use (()) syntax to perform arithmetic operations else use bc (bash calculator).
+
+Integer Example:
+  x=4
+  y=7
+  ((sum=x+y))
+  echo "The addition of $x and $y is: $sum"
+Float/integer Example:
+Note: bc calculator is a commmand to perform arithemtic operations on either integers or float numbers.
+x=4.5
+y=6.7
+sum=$(bc<<<"scale=3;$x+$y")
+echo "The addtion of $x and $y is: $sum"

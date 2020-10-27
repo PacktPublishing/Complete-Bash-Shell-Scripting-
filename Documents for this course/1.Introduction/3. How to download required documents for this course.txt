@@ -1,0 +1,7 @@
+Git Repo url is: https://github.com/NarendraPAutomationEngineer/BashShellScriptingTutorials
+
+Open git bash/linux terminal and run below command to download repo:
+
+git clone https://github.com/NarendraPAutomationEngineer/BashShellScriptingTutorials.git
+
+Note: Above command will download BashShellScriptingTutorials repo

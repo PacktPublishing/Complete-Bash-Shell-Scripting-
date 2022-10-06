@@ -1,10 +1,12 @@
 Steps:
- step1: Get Gmail Id and Password
- Step2: login into ubuntu and switch to root using: sudo su -
- Step3:  Run below commands:
+ step1: Login Into Gmail 
+ Step2: Enable 2 step Verification (Manage Google Account --> Security --> Signing in to Google )
+ Step3: Get App Password ( yourGMAIL@gmail.com  appPassword: generateIT)
+ Step4: login into ubuntu and switch to root using: sudo su -
+ Step5:  Run below commands:
 	apt-get update -y
         apt-get install sendmail mailutils -y
- Step4: Create authentication file
+ Step6: Create authentication file
         cd /etc/mail
 	mkdir -m 700 authinfo
 	cd authinfo/
@@ -15,10 +17,10 @@ Steps:
 
         Now edit your mail id and password
 
-Step5: create hash map of the file:
+Step7: create hash map of the file:
 	makemap hash gmail < gmail
-Step6: Got to /etc/mail and open sendmail.mc
-       then Add the following lines to sendmail.mc file right above MAILER_DEFINITIONS:
+Step8: Got to /etc/mail and open sendmail.mc
+       then Add the following lines to sendmail.mc file right above MAILER_DEFINITIONS
 	#GMail settings:
 	define(`SMART_HOST',`[smtp.gmail.com]')dnl
 	define(`RELAY_MAILER_ARGS', `TCP $h 587')dnl
@@ -29,12 +31,8 @@ Step6: Got to /etc/mail and open sendmail.mc
 	FEATURE(`authinfo',`hash -o /etc/mail/authinfo/gmail.db')dnl
 
 
-Step7: Now run below two command from /etc/mail
+Step9: Now run below two command from /etc/mail
 	make
 	/etc/init.d/sendmail reload
-Step8: Now open https://www.google.com/settings/security/lesssecureapps
-       and Allow less secure apps: ON
-Step9: Verify the test mail using
-	echo "Demo" | mail -s "Status of Httpd" dowithscripting@gmail.com
- 
-echo "Demo" | mail -s "Status of Httpd" dowithscripting@gmail.com -A demo.txt
+Step10: Verify the test mail using
+	echo "Hello, I am from $(hostname)" | mail -s "Testing Gmail Setup on Ubuntu Server" toMailId@gmail.com

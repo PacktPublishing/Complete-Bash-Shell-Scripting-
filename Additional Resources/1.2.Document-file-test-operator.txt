@@ -1,0 +1,35 @@
+File test operators:
+--------------------
+
+[  -d  file ]	-- It return true if the file/path  is directory  else false     
+[  -f file ]    -- It return true if the file/path is a file else  false
+[  -e file ]    -- It return true if the file/path is exists else  false
+[  -r file ]    -- It return true if the file/path is readable else  false
+[  -w file ]    -- It return true if the file/path is writable else  false
+[  -x file ]    -- It return true if the file/path is executable else  false
+
+-----------------------------------------------------------------------------
+Advanced file test operators are listed below:
+
+    a : True if the file exists.
+    b : True if the file exists and is a block special file.
+    c : True if the file exists and is a character special file.
+    d : True if the file exists and is a directory.
+    e : True if the file exists.
+    f : True if the file exists and is a regular file.
+    g : True if the file exists and its SGID bit is set.
+    h : True if the file exists and is a symbolic link.
+    k : True if the file exists and its sticky bit is set.
+    p : True if the file exists and is a named pipe (FIFO).
+    r : True if the file exists and is readable.
+    s : True if the file exists and has a size greater than zero.
+    t : True if file descriptor is open and refers to a terminal.
+    u : True if the file exists and its SUID (set user ID) bit is set.
+    w : True if the file exists and is writable.
+    x : True if the file exists and is executable.
+    O : True if the file exists and is owned by the effective user ID.
+    G : True if the file exists and is owned by the effective group ID.
+    L : True if the file exists and is a symbolic link.
+    N : True if the file exists and has been modified since it was last read.
+    S : True if the file exists and is a socket.
+==============================================================================

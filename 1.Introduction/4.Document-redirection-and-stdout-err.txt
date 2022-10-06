@@ -1,7 +1,0 @@
-> file_name defualts to success output
-1>file_name  success output
-2>file_name  error output
-
-1>file_name  2>file_name    both will store into a single file 
-1>file_name  2>&1
-&>file_name

@@ -1,3 +1,0 @@
-Design arithmetic calculator with shell script using awk  command/script
-
-Note: You can get help from previous lecture
